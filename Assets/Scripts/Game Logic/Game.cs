@@ -105,7 +105,7 @@ public class Game : MonoBehaviour
             {
                 isDead = true;
                 SoundManager.Play(SoundManager.AudioType.hit);
-                SoundManager.Play(SoundManager.AudioType.swooshing);
+                StartCoroutine(PlaySoundAfterDelay(SoundManager.AudioType.die, .2f));
 
                 // Play Game Over Animation
                 StartCoroutine(EnableGameOver(1f));
@@ -132,6 +132,12 @@ public class Game : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, -0.66f, transform.position.z);
         fellDown = true;
+    }
+
+    private IEnumerator PlaySoundAfterDelay(SoundManager.AudioType audioType, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SoundManager.Play(audioType);
     }
 
     // Restarts game

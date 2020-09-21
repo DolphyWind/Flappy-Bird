@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioSource[] audioSources;
-    public static float soundVolume = .3f;
+    public static float soundVolume = 1f;
     private static AudioClip wingSFX, pointSFX, hitSFX, dieSFX, swooshingSFX;
 
     public enum AudioType
