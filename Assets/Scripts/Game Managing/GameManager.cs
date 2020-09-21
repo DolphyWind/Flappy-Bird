@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Animations;
 
 public class GameManager : MonoBehaviour
@@ -12,8 +13,8 @@ public class GameManager : MonoBehaviour
     public RuntimeAnimatorController[] animatorControllers;
     float degree = 0;
     private Vector2 originalPos;
-    public GameObject player;
-    public GameObject background;
+    public Animator player;
+    public Image background;
 
     void Start()
     {
@@ -42,14 +43,14 @@ public class GameManager : MonoBehaviour
     private void SelectPlayer()
     {
         int i = Random.Range(0, animatorControllers.Length);
-        player.GetComponent<Animator>().runtimeAnimatorController = animatorControllers[i];
+        player.runtimeAnimatorController = animatorControllers[i];
     }
 
     // Select a random background
     private void SelectBackground()
     {
         int bg_index = Random.Range(0, backgrounds.Length);
-        background.GetComponent<SpriteRenderer>().sprite = backgrounds[bg_index];
+        background.sprite = backgrounds[bg_index];
     }
     
 }
