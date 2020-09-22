@@ -105,7 +105,6 @@ public class Game : MonoBehaviour
             {
                 isDead = true;
                 SoundManager.Play(SoundManager.AudioType.hit);
-                StartCoroutine(PlaySoundAfterDelay(SoundManager.AudioType.die, .2f));
 
                 // Play Game Over Animation
                 StartCoroutine(EnableGameOver(1f));
@@ -113,7 +112,9 @@ public class Game : MonoBehaviour
                 // If player collided with ground don't make it fall.
                 if (other.CompareTag("Ground"))
                     BirdDie();
-
+                // Play die sfx if not hit ground.
+                else 
+                    StartCoroutine(PlaySoundAfterDelay(SoundManager.AudioType.die, .2f));
                 // Play White Fade
                 if (!whiteFadePlayed)
                     Fade.Play("White Fade", new Color(1, 1, 1, 0));
