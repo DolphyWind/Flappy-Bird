@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class RandomShinePos : MonoBehaviour
 {
     Vector2 startPos;
+    public Sprite[] shineSprites;
+    Image image;
 
     void Start()
     {
@@ -13,6 +15,7 @@ public class RandomShinePos : MonoBehaviour
         startPos = transform.localPosition;
         startPos.x = Mathf.Abs(startPos.x);
         startPos.y = Mathf.Abs(startPos.y);
+        image = GetComponent<Image>();
 
         StartCoroutine(RandomPosition());
     }
@@ -21,11 +24,17 @@ public class RandomShinePos : MonoBehaviour
     {
         while (true)
         {
+            image.sprite = shineSprites[0];
             Vector2 newPos;
             newPos.x = Random.Range(-startPos.x, startPos.x);
             newPos.y = Random.Range(-startPos.y, startPos.y);
             transform.localPosition = newPos;
-            yield return new WaitForSeconds(.5f);
+
+            for(int i = 0; i < shineSprites.Length; i++)
+            {
+                image.sprite = shineSprites[i];
+                yield return new WaitForSeconds(.5f/shineSprites.Length);
+            }
         }
     }
 }

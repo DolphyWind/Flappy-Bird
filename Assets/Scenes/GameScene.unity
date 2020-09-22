@@ -2511,7 +2511,6 @@ GameObject:
   - component: {fileID: 2086051442}
   - component: {fileID: 2086051445}
   - component: {fileID: 2086051444}
-  - component: {fileID: 2086051443}
   - component: {fileID: 2086051446}
   m_Layer: 5
   m_Name: Shine
@@ -2539,25 +2538,6 @@ RectTransform:
   m_AnchoredPosition: {x: -60.100002, y: 60.1}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &2086051443
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2086051441}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eabce99491d03bd458b4170a516e3282, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &2086051444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,7 +2558,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6302306078055872378, guid: da2283ec98c654245aa894d0a82c2664, type: 3}
+  m_Sprite: {fileID: -2213980802793497653, guid: e48641c47c0c543469df87b894906a87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2608,6 +2588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0fa8bec94f4ed49b14324d7318c243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shineSprites:
+  - {fileID: -2213980802793497653, guid: e48641c47c0c543469df87b894906a87, type: 3}
+  - {fileID: -6035086375851864279, guid: e48641c47c0c543469df87b894906a87, type: 3}
+  - {fileID: 8885587404867102231, guid: e48641c47c0c543469df87b894906a87, type: 3}
 --- !u!212 &806809263174777060
 SpriteRenderer:
   m_ObjectHideFlags: 0
