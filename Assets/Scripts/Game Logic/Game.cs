@@ -94,7 +94,7 @@ public class Game : MonoBehaviour
         if (!isDead)
         {
             // Add score
-            if (other.tag == "Score Area")
+            if (other.CompareTag("Score Area"))
             {
                 score++;
                 scoreText.text = score.ToString();
@@ -111,7 +111,7 @@ public class Game : MonoBehaviour
                 StartCoroutine(EnableGameOver(1f));
 
                 // If player collided with ground don't make it fall.
-                if (other.tag == "Ground")
+                if (other.CompareTag("Ground"))
                     BirdDie();
 
                 // Play White Fade
@@ -123,7 +123,7 @@ public class Game : MonoBehaviour
         else
         {
             // If player collided with ground stop falling
-            if (other.tag == "Ground")
+            if (other.CompareTag("Ground"))
                 BirdDie();
         }
     }
